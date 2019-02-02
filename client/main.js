@@ -29,12 +29,25 @@ let decrement = (player) => {
   Players.update({_id: player._id}, {$inc: {score: -1}})
 }
 
+let clearPlayers = () => {
+  players.forEach((player) => {
+    Players.remove({_id: player._id})
+  })
+ 
+}
+
 Meteor.startup(() => {
   Tracker.autorun(() => {
     players = Players.find().fetch()
-    
+    let clear = () => {
+  players.forEach((player) => {
+    Players.remove({_id: player.id})
+  })
+ 
+}
     let x = (
       <div>
+        <button onClick={clearPlayers}> Clear </button>
         {players.map((player) => (
           <div style={{display: "flex", alignItems: "center"}}>
             <h2> {player.name} &nbsp;- &nbsp; </h2>
