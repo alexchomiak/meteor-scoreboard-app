@@ -1,0 +1,74 @@
+.addplayer {
+    background-color: $secondary-color;
+    padding: 1rem;
+    border: 2px solid darken($secondary-color,5%);
+    border-radius: $border-radius;
+    text-align: center;
+    font-size: 1.5rem;
+    margin: 2rem 1rem;
+
+}
+
+.addplayer-title {
+    margin-bottom: 1rem;
+}
+
+.addplayer-form {
+    padding: .5rem 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.addplayer-form-textbox {
+    color: white;
+    background-color: $primary-color;
+    padding: 1.5rem 3rem;
+    padding-left: 2rem;
+    border: 0px;
+    border-bottom: 3px solid darken($secondary-color,5%);
+    border-radius: 2px;
+    flex-grow:1;
+    margin-right: 1rem;
+    font-size: 1.2rem;
+
+    &:focus,&:hover {
+        outline: none;
+        background-color: darken($primary-color,2%);
+        border-color: darken($primary-color,10%);
+    }
+
+    &::placeholder {
+        color: white;
+        transition: all 250ms ease-in-out;
+        font-size: 1.4rem;
+    }
+    &:focus::placeholder {
+        opacity: 0.0;
+        font-size: 0.1rem;
+    }
+}
+
+
+
+.addplayer-form-button {
+    outline: none;
+    padding: 0 2rem;
+    background-color: $primary-color;
+    border: 0px;
+    border-bottom: 3px solid darken($secondary-color,5%);
+    border-radius: 2px;
+    font-size: 1.2rem;
+    &:hover,&:focus {
+        outline: none;
+        padding: 0 2rem;
+        background-color: darken($primary-color,7%);
+        border: 0px;
+        border-bottom: 3px solid darken($secondary-color,10%);
+    }
+
+    &:active {
+        background-color: darken($primary-color,10%);
+        border-width: 5px;
+        transform: scale(1.1);
+    }
+}

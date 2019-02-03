@@ -1,0 +1,22 @@
+.title-bar {
+    background-color: $primary-color;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    border-bottom: .2rem solid darken($primary-color,10%);
+    margin-bottom: 1rem;
+}
+
+.title {
+    font-weight: 300;
+    font-style: normal;
+    margin-bottom: 5px;
+    font-size: 3.8rem;
+}
+
+.subtitle {
+    font-weight: 300;
+
+    font-style: oblique;
+    font-size: 1.5rem;
+}

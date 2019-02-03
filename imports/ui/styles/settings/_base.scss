@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-family: Helvetica, Arial, Helvetica, sans-serif;
+    font-weight: 300;
+
+}
+
+body {
+  
+}
+
+buttn:focus {
+    outline: none;
+  }
+
+
+html {
+    background-color: $background-color;
+    font-size: 62.5%;
+}
+
+body {
+    
+
+}
+
+.wrapper {
+    margin: 0 auto;
+    max-width: 60rem;
+    font-weight: 300;
+}
+
+@media (min-width: 150rem) {
+    html {
+        font-size: 80.5%;
+    }
+}

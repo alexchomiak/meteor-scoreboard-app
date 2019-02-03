@@ -2,8 +2,8 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import {Meteor} from 'meteor/meteor' 
 import {Tracker} from 'meteor/tracker'
-import {Players} from './../imports/api/players'
-
+import {Players, calculatePlayerPositions} from './../imports/api/players'
+import App from './../imports/ui/app'
 
 let players = []
 
@@ -29,46 +29,22 @@ let decrement = (player) => {
   Players.update({_id: player._id}, {$inc: {score: -1}})
 }
 
-let clearPlayers = () => {
-  players.forEach((player) => {
-    Players.remove({_id: player._id})
-  })
- 
-}
+
 
 Meteor.startup(() => {
   Tracker.autorun(() => {
-    players = Players.find().fetch()
+
+    players = Players.find({},{sort: {score:-1}}).fetch()
+    let positionedPlayers = calculatePlayerPositions(players)  
+    
     let clear = () => {
   players.forEach((player) => {
     Players.remove({_id: player.id})
   })
  
 }
-    let x = (
-      <div>
-        <button onClick={clearPlayers}> Clear </button>
-        {players.map((player) => (
-          <div style={{display: "flex", alignItems: "center"}}>
-            <h2> {player.name} &nbsp;- &nbsp; </h2>
-            <h2>  {player.score}</h2>
-            <button style={{"borderRadius":"50%", "width" : "30px", "height": "30px", marginLeft: "10px"}} onClick={() => {removePlayer(player)}}> X </button>
-            <button style={{"borderRadius":"50%", "width" : "30px", "height": "30px", marginLeft: "10px"}} onClick={() => {decrement(player)}}> -1 </button>
-            <button style={{"borderRadius":"50%", "width" : "30px", "height": "30px", marginLeft: "10px"}} onClick={() => {increment(player)}}> +1 </button>
 
-          </div>  
-        ))}
-
-        <form onSubmit={addPlayer} >
-            <h3> Add Player </h3>
-            <p> Name: <input autoComplete="off" type="text" name="playername"/> </p>
-
-            <button type="submit"> Submit </button>
-        </form>
-      </div>
-    )
-
-    ReactDOM.render(x,document.getElementById("app"))
+    ReactDOM.render(<App players={positionedPlayers}/>,document.getElementById("app"))
   })
   let name = "reeeee"
   

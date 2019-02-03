@@ -1,0 +1,104 @@
+.player {
+    display: flex;
+    align-items: center;
+    line-height: 1;
+    margin: 1rem;
+    justify-content: space-between;
+    background-color: rgba($primary-color,.9);
+
+    font-size: 1.2rem;
+    padding: 1rem;
+    border: 2px solid darken($secondary-color,5%);
+    border-radius:$border-radius;
+    transition: color 500ms ease-in-out;
+    transition: border-color 500ms ease-in-out;
+    color: #500000;
+}
+
+
+.player--position-1 {
+    $position-color : #fac800; 
+    color: $position-color;
+    border-color: darken($position-color,5%);
+    font-weight: 300;
+}
+
+.player--position-2 {
+    $position-color : #d1d1d1; 
+    color: $position-color;
+    border-color: darken($position-color,10%);
+}
+
+.player--position-3 {
+    $position-color : #ff9c50; 
+    color: $position-color;
+    border-color: darken($position-color,10%);
+}
+
+.player--position-4 {
+    $position-color : #3dac0a; 
+    color: $position-color;
+    border-color: darken($position-color,10%);
+    font-weight: 400;
+}
+
+.player--position-5 {
+    $position-color : #9e0685; 
+    color: $position-color;
+    border-color: darken($position-color,10%);
+}
+
+
+
+
+.player-info {
+    color: inherit;
+    font-weight: inherit;
+    overflow-wrap:break-word;
+    min-width: 0;
+}
+.player-name {
+   
+    font-size: 2.5rem;
+}
+
+.player-stats {
+    font-weight: inherit;
+    margin-top: 5px;
+    color: inherit;
+   
+    font-style: italic;
+    font-size: 1.5rem;
+}
+
+.player-buttons {
+    flex-shrink: 0;
+    display: flex;
+    margin: 0 0;
+    margin-left: .5rem;
+    padding: 0 0;
+}
+
+.player-button {
+    border: 2px solid;
+    border-radius: 50%;
+    border-color: $secondary-color;
+    width: 3.5rem;
+    height: 3.5rem;
+    margin: .7rem;
+    background-color: $primary-color;
+    outline: none;
+    transition: all 100ms ease-in-out;
+
+    &:hover,&:focus {
+        background-color: darken($primary-color,5%);
+    }
+
+    &:active {
+        background-color: darken($primary-color,8%);
+        border-width: 3px;
+        transform: scale(1.3);
+    }
+  
+}
+
