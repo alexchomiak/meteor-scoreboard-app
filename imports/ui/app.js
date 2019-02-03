@@ -18,7 +18,7 @@ render() {
     return (
        <div>
         <TitleBar title="Scoreboard" subtitle="A simple implementation of WebSockets developed by Alex Chomiak"/>
-        <div className="wrapper"> <div onClick={this.clearPlayers} className="widebutton"><button className="button"> Clear Players </button> </div> </div>
+        <div className="wrapper"> <div  className="widebutton"><button disabled={ !this.props.players.length > 0 }onClick={this.clearPlayers} className="button"> {(this.props.players.length > 0) ? "Clear Players" : "..."} </button> </div> </div>
         <PlayerList players={this.props.players}/>
         <AddPlayer playersLength={this.props.players.length}/>
       </div>
