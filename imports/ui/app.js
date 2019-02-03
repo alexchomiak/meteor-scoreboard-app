@@ -17,7 +17,7 @@ export default class App extends Component {
 render() {
     return (
        <div>
-        <TitleBar title="Scoreboard" subtitle="A simple implementation of a scoreboard application using WebSockets."/>
+        <TitleBar title="Scoreboard" subtitle="A simple implementation of a scoreboard application using web sockets."/>
         <div className="wrapper"> <div  className="widebutton"><button disabled={ !this.props.players.length > 0 }onClick={this.clearPlayers} className="button"> {(this.props.players.length > 0) ? "Clear Players" : "..."} </button> </div> </div>
         <PlayerList players={this.props.players}/>
         <AddPlayer playersLength={this.props.players.length}/>
