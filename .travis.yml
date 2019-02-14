@@ -5,6 +5,7 @@ before_install:
   -in .travis_rsa.enc -out ~/.ssh/travis_rsa -d
 - chmod 600 ~/.ssh/travis_rsa
 before_deploy:
+- rvm install 2.2.2
 - echo -e "Host ssh-proxy.chom.es\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 - echo -e "Host github.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 deploy:
