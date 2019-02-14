@@ -1,20 +1,11 @@
 sudo: required
-language: node_js
-branches:
-  only:
-  - master
 before_install:
 - openssl aes-256-cbc -K $encrypted_b3e1ad9221b2_key -iv $encrypted_b3e1ad9221b2_iv
   -in .travis_rsa.enc -out ~/.ssh/travis_rsa -d
 - chmod 600 ~/.ssh/travis_rsa
 
 before_script:
-  - curl https://install.meteor.com | /bin/sh
-  - export PATH=$HOME/.meteor:$PATH
-  - npm install -g spacejam
-cache:
-  directories:
-    - node_modules
+  - gem install rake
 
 before_deploy:
 - echo -e "Host ssh-proxy.chom.es\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
