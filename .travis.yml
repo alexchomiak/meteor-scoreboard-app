@@ -1,5 +1,8 @@
 sudo: required
 language: ruby
+branches:
+  only:
+  - master
 before_install:
 - rvm install 2.2.2
 - openssl aes-256-cbc -K $encrypted_b3e1ad9221b2_key -iv $encrypted_b3e1ad9221b2_iv
